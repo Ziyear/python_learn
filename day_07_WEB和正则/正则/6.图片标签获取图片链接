@@ -1,0 +1,8 @@
+import re
+
+source = """
+<img class="_3sqp6vHqsmiDV299yVc22D" src="https://infinitypro-img.infinitynewtab.com/findaphoto/bigLink/18011.jpg?imageView2/2/w/600/format/webp/interlace/1">
+"""
+
+search = re.search(r"http.+\.(jpg|png)", source)
+print(search.group())
