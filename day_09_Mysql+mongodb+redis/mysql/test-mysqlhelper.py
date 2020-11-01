@@ -16,6 +16,6 @@ def select(helper):
 
 
 if __name__ == '__main__':
-    helper = MysqlHelper(host="123.57.44.168", port=3306, user="root", password="ZIYEAR@123456", db="python_test_01",
+    helper = MysqlHelper(host="ali.ziyear.com", port=3306, user="root", password="ZIYEAR@123456", db="python_test_01",
                          charset="utf8")
     select(helper)

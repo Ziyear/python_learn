@@ -5,7 +5,7 @@ conn = None
 cursor = None
 try:
     # 获取连接
-    conn = connect(host="123.57.44.168", port=3306, user="root", password="ZIYEAR@123456", db="python_test_01",
+    conn = connect(host="ali.ziyear.com", port=3306, user="root", password="ZIYEAR@123456", db="python_test_01",
                    charset="utf8")
     # 获取执行器
     cursor = conn.cursor()

@@ -7,7 +7,7 @@ def md5(str):
 
 
 def login(username, password):
-    helper = MysqlHelper(host="123.57.44.168", port=3306, user="root", password="ZIYEAR@123456", db="python_test_01",
+    helper = MysqlHelper(host="ali.ziyear.com", port=3306, user="root", password="ZIYEAR@123456", db="python_test_01",
                          charset="utf8")
     sql = "select * from t_user where username=%s and is_deleted = 'n'"
     result = helper.execute(sql, [username])

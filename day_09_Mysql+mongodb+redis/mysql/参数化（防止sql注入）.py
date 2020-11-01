@@ -8,7 +8,7 @@ try:
     age = int(input("请输入学生年龄："))
     address = input("请输入学生地址：")
     # 获取连接
-    conn = Connect(host="123.57.44.168", port=3306, user="root", password="ZIYEAR@123456", db="python_test_01",
+    conn = Connect(host="ali.ziyear.com", port=3306, user="root", password="ZIYEAR@123456", db="python_test_01",
                    charset="utf8")
     # 获取执行器
     cursor = conn.cursor()
