@@ -8,7 +8,22 @@ db_py = client.py
 stu = db_py.stu
 
 # 增加
-# stu.insert_one({"name": "张三丰", "age": 19})
+for i in range(10):
+    stu.insert_one({"name": "zhang" + str(i), "age": i + 9})
 
-#修改
-stu.update_one({"name": "张三丰"}, {'$set': {"name": "abc"}})
+# 修改
+# stu.update_one({"name": "张三丰"}, {'$set': {"name": "abc"}})
+
+# 删除
+# stu.delete_one({"name": "abc"})
+#
+# 查询
+all = stu.find()
+
+for item in all:
+    print(str(item))
+
+print("############")
+cursor = stu.find({'age': {'$gt': 15}}).sort('age', -1).skip(1).limit(2)
+for item in cursor:
+    print(str(item))
