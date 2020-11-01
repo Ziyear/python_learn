@@ -1,4 +1,4 @@
-from mysql.MysqlHelper import MysqlHelper
+from mymysql.MysqlHelper import MysqlHelper
 
 
 def insert(helper):

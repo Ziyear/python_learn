@@ -1,5 +1,5 @@
 import hashlib
-from mysql.MysqlHelper import *
+from mymysql.MysqlHelper import *
 
 def md5(str):
     md5 = hashlib.md5(str.encode())
