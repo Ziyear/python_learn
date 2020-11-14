@@ -1,0 +1,63 @@
+# 创建项目
+django-admin startproject test1
+
+# 进入创建的项目
+cd test1
+
+# 创建应用
+python manage.py startapp booktest
+
+# 编写模型
+booktest/models.py
+
+# 测试运行应用
+python manage.py runserver
+
+# 添加应用到settings.py
+INSTALLED_APPS
+
+# 生成迁移文件 根据模型类生成sql语句
+python manage.py makemigrations
+
+# 执行迁移
+python manage.py migrate
+
+# 测试
+python manage.py shell
+>>> from django.utils import timezone as datetime
+>>> from booktest.models import *
+>>> b = BookInfo()
+>>> b.btitle = '11111'
+>>> b.bpub_date = datetime.now()
+>>> b.save()
+>>> BookInfo.objects.all()
+<QuerySet [<BookInfo: abc>, <BookInfo: haha>, <BookInfo: django>, <BookInfo: 11111>]>
+
+# 管理后台操作
+    # 创建一个管理员用户
+    python manage.py createsuperuser
+
+    # 运行
+    python manage.py runserver
+    打开 http://127.0.0.1:8000/admin 进行登录
+
+    # 中文
+    LANGUAGE_CODE = 'zh-hans'
+
+    # 向admin注册booktest的模型
+    see  test1/booktest/admin.py
+    admin.site.register(你的模型类)
+
+    # 定制模型列表页面
+    see test1/booktest/admin.py BookInfoAdmin
+    admin.site.register(你的模型类,你的模型配置类)
+
+    # 添加图书并关联英雄
+    see test1/booktest/admin.py HeroInfoInline and BookInfoAdmin.inline
+
+# 编写视图
+see test1/booktest/views.py
+配置 test1/test1/urls.py 包含 test1/booktest/urls.py
+# 创建模板
+see test1/templates/booktest
+settings TEMPLATES 配置模板路径
