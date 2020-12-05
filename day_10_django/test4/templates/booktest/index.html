@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+{{hero.showname}}
+<hr>
+<a href="/booktest/11111">来吧，展示----1</a> <br>
+<a href="{% url 'booktest:show'  %}">来吧，展示----2</a> <br>
+<a href="{% url 'booktest:show_re' 123 %}">来吧，展示----3</a> <br>
+<hr>
+奇数行显示红色，偶数行显示蓝色
+<br/>
+<ul>
+    {% for hero in list %}
+    {% if forloop.counter|divisibleby:2 %}
+    <li style="color: red">{{forloop.counter}}:{{hero.showname}}</li>
+    {% else %}
+    <li style="color: blue">{{forloop.counter}}:{{hero.showname}}</li>
+    {% endif %}
+    {% empty %}
+    <li>啥也没找到</li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

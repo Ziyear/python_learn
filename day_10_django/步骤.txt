@@ -61,3 +61,6 @@ see test1/booktest/views.py
 # 创建模板
 see test1/templates/booktest
 settings TEMPLATES 配置模板路径
+# 运行
+python manage.py runserver
+访问 http://127.0.0.1:8000/ 就打开了urls.py配置的path的对应view

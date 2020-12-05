@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{{t1}}
+<hr>
+{{t1|safe}}
+<hr>
+{% autoescape off %}
+{{t1}}
+{% endautoescape %}
+<hr>
+字面值：<br>
+{{t2|default:'<h1>abc</h1>'}}<br>
+手动转义：
+{{t2|default:'&lt;h1&gt;abc&lt;/h1&gt;'}}
+</body>
+</html>
