@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>heroList</title>
+</head>
+<body>
+{% for hero in page %}
+    <li>{{ hero.hname }}</li>
+{% endfor %}
+<hr>
+{% for index in page.paginator.page_range %}
+    {% if index == page.number %}
+        {{ index }}
+    {% else %}
+        <a href="/heroList?index={{ index }}">{{ index }}</a>
+    {% endif %}
+{% endfor %}
+</body>
+</html>
